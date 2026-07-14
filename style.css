@@ -9,7 +9,7 @@
     --accent-color: #f9faf8;
     --accent-dim: rgba(249, 250, 248, 0.1);
     --accent-hover: rgba(249, 250, 248, 0.2);
-    --border-color: #f9faf8;
+    --border-color: #e6b500;
     --card-border: rgba(249, 250, 248, 0.3);
     --shadow: rgba(0, 0, 0, 0.5);
     --success-color: #2ecc71;
@@ -235,15 +235,15 @@ nav a.active {
     display: flex;
     max-height: 380px;
     width: 100%;
-    max-width: 450px;
+    max-width: 350px;
     object-fit: cover;
-    border: 2px solid var(--border-color);
+    border: 0px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 15px 30px var(--shadow);
     transition: transform 0.5s;
 }
 
-.header-body-logo:hover {
+//.header-body-logo:hover
+{
     transform: translateY(-5px) scale(1.01);
 }
 
