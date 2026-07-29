@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
     margin: 0;
     padding: 0;
     color: var(--text-primary);
@@ -39,7 +39,7 @@ header {
     padding: 0 5%;
     background-color: var(--bg-primary);
     font-size: 18px;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -85,7 +85,7 @@ nav a {
 nav a:hover,
 nav a.active {
     color: var(--text-primary);
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .btn-nav-chat {
@@ -112,13 +112,18 @@ nav a.active {
 .header-body {
     display: flex;
     background-color: var(--bg-primary);
-    justify-content: space-between;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./images/alphegab&w.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-around;
     align-items: center;
-    min-height: 550px;
+    min-height: 800px;
     padding: 60px 8%;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 0px solid var(--border-color);
     position: relative;
     overflow: hidden;
+
+
 }
 
 .header-body-content {
@@ -168,9 +173,10 @@ nav a.active {
 
 .header-body h1 {
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 1000;
     margin: 0 0 20px 0;
     line-height: 1.2;
+    color:goldenrod;
 }
 
 .header-body p {
@@ -187,42 +193,40 @@ nav a.active {
 }
 
 .btn-primary {
-    background-color: var(--text-primary);
-    color: var(--bg-primary);
-    border: 2px solid var(--border-color);
+    background-color:#18191b;
+    color: var(--text-primary);
+    border: 0px solid var(--border-color);
     padding: 12px 28px;
     font-size: 16px;
     font-weight: 700;
-    border-radius: 4px;
+    border-radius: 112px;
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
 }
 
 .btn-primary:hover {
-    background-color: transparent;
-    color: var(--text-primary);
+    background-color: black;
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: #18191b;
     color: var(--text-primary);
-    border: 2px solid var(--border-color);
+    border: 0px solid var(--border-color);
     padding: 12px 28px;
     font-size: 16px;
     font-weight: 700;
-    border-radius: 4px;
+    border-radius: 112px;
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
 }
 
 .btn-secondary:hover {
-    background-color: var(--accent-dim);
+    background-color: black;
 }
 
 .header-body-visual {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,19 +246,129 @@ nav a.active {
     transition: transform 0.5s;
 }
 
-//.header-body-logo:hover
-{
-    transform: translateY(-5px) scale(1.01);
-}
 
 /* Services Section */
 .services {
     background-color: var(--bg-primary);
-    min-height: 600px;
-    height: auto;
     padding: 80px 8%;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     text-align: center;
+}
+
+.tabs-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    width: 100%;
+}
+
+.tabs-list-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.tabs-list-wrapper::-webkit-scrollbar {
+    height: 4px;
+}
+
+.tabs-list-wrapper::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.tabs-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    min-width: max-content;
+}
+
+.tab-trigger {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-trigger:hover {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.tab-trigger.active {
+    background: var(--border-color);
+    color: var(--bg-primary);
+    border-color: var(--border-color);
+}
+
+.tabs-content {
+    position: relative;
+    min-height: 400px;
+}
+
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.tab-panel.active {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-panel .service-card {
+    flex: 1;
+    max-width: 100%;
+    text-align: left;
+}
+
+.service-visual {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 0px solid var(--card-border);
+    position: relative;
+    min-height: 550px;
+}
+
+.service-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+}
+
+
+
+@media (max-width: 992px) {
+    .tab-panel.active {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-visual {
+        width: 100%;
+        min-height: 250px;
+    }
 }
 
 .services h1 {
@@ -273,11 +387,9 @@ nav a.active {
     margin: 0 auto 50px auto;
 }
 
+/* Services Grid (Old) - Kept for compatibility if needed, but tabs use .tab-panel .service-card */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    display: none; /* Hidden as we use tabs now */
 }
 
 .service-card {
@@ -343,14 +455,14 @@ nav a.active {
 }
 
 .service-card h3 {
-    font-size: 22px;
+    font-size: 24px;
     margin: 0 0 15px 0;
     font-weight: 500;
 }
 
 .service-card p {
     color: var(--text-secondary);
-    font-size: 15px;
+    font-size: 18px;
     margin: 0 0 25px 0;
     flex-grow: 1;
 }
@@ -378,17 +490,48 @@ nav a.active {
     text-decoration: underline;
 }
 
-.service-link svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.service-features li {
+    font-size: 16px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.service-features li::before {
+    content: "";
+    display: inline-block;
+    width: 16px;            /* Match your desired icon size */
+    height: 16px;           /* Match your desired icon size */
+    background-image: url("images/alphega.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 8px;      /* Adjust spacing between the icon and the list text */
+    vertical-align: middle; /* Keeps the icon aligned with the text line */
+}
+
+@media (max-width: 600px) {
+    .service-features {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Why Choose Us Section */
 .why-us {
     padding: 80px 8%;
     background-color: var(--bg-secondary);
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     gap: 60px;
@@ -463,7 +606,7 @@ nav a.active {
 .contact-section {
     padding: 80px 8%;
     background-color: var(--bg-primary);
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     text-align: center;
 }
 
@@ -671,7 +814,7 @@ textarea.form-control {
 .chat-header {
     background-color: var(--bg-primary);
     padding: 15px 20px;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1006,7 +1149,7 @@ textarea.form-control {
 /* Footer styling */
 footer {
     background-color: var(--bg-primary);
-    border-top: 2px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
     padding: 40px 8%;
     display: flex;
     justify-content: space-between;

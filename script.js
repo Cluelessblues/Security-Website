@@ -7,7 +7,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const serviceSelect = document.getElementById("form-service");
   const messageInput = document.getElementById("form-message");
 
-  // 1. "Enquire Now" Service Card Interaction
+  // 1. Service Tabs Logic
+  const tabTriggers = document.querySelectorAll(".tab-trigger");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const target = trigger.getAttribute("data-target");
+
+      // Update active trigger
+      tabTriggers.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      trigger.classList.add("active");
+      trigger.setAttribute("aria-selected", "true");
+
+      // Update active panel
+      tabPanels.forEach((panel) => {
+        panel.classList.remove("active");
+      });
+      document.getElementById(target).classList.add("active");
+    });
+  });
+
+  // 2. "Enquire Now" Service Card Interaction
   serviceEnquireBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const serviceVal = btn.getAttribute("data-service");
